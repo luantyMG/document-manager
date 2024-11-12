@@ -5,14 +5,17 @@ import { BsFillInboxFill } from "react-icons/bs";
 import { LuPencil } from "react-icons/lu";
 import { MdWatchLater } from "react-icons/md";
 import { MdLabelImportant } from "react-icons/md";
-import { IoMailSharp } from "react-icons/io5";
+import { IoMailSharp,IoSettingsSharp,IoFolderSharp } from "react-icons/io5";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+
+
+
 
 
 const MainMenu = () => {
   return (
     <>
-      <ul className="menu bg-base-100 rounded-box w-56">
+      <ul className="menu bg-neutral-300  w-56">
         <li><button className="btn btn-lg"> <LuPencil />Redactar
           </button></li>
   <li>
@@ -56,6 +59,22 @@ const MainMenu = () => {
       <RiDeleteBin5Fill />
       Papelera
     </a>
+  </li>
+  <li>
+    <details open>
+      <summary><IoSettingsSharp/>Ajustes</summary>
+      <ul>
+        <li>
+          <details open>
+            <summary><IoFolderSharp/>Catalogos</summary>
+            <ul>
+              <li><a>Usuarios</a></li>
+              <li><a>Planteles</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </details>
   </li>
 </ul>
     </>
