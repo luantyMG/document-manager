@@ -5,7 +5,7 @@ import Image from "next/image";
 const NavBar = () => {
   return (
     <>
-      <div className="navbar flex-row justify-between  bg-base-100">
+      <div className="navbar flex-row justify-between bg-neutral-300">
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
             <svg
