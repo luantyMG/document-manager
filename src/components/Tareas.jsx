@@ -6,7 +6,7 @@ import { data } from "../utils/data";
 const Tareas = () => {
   // Definir el estado para la página actual y la cantidad de elementos por página
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
  // Establece un valor inicial para los items por página
 
   const containerRef = useRef(null); // Referencia para el contenedor de las tareas
@@ -33,13 +33,13 @@ const Tareas = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 py-2">
    
-      <div ref={containerRef} className="space-y-4 overflow-y-auto" style={{ maxHeight: "500px" }}>
+      <div ref={containerRef} className="space-y-4 overflow-y-auto" style={{ maxHeight: "485px" }}>
         {currentTasks.map((tarea) => (
           <div
             key={tarea.tarea_id}
-            className="bg-white border border-gray-200 rounded-md shadow-sm p-5 flex items-center justify-between space-x-4"
+            className="bg-white border border-gray-200 rounded-md shadow-sm p-2 flex items-center justify-between space-x-4"
           >
           
             <div className="text-xs text-gray-500 truncate max-w-[250px]">
