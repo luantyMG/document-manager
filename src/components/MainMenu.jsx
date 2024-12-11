@@ -24,74 +24,74 @@ const MainMenu = () => {
 
   return (
     <>
-      <ul className="menu bg-neutral-300 w-56">
+      <ul className="menu bg-neutral-300 w-16 group hover:w-56 transition-all duration-300 space-y-1">
         <li>
-          <button className="btn btn-lg" onClick={openModal}>
-            <LuPencil />
-            Redactar
+          <button className="btn btn-sm flex items-center space-x-2 p-2" onClick={openModal}>
+            <LuPencil className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Redactar</span>
           </button>
         </li>
         <li>
-          <a>
-            <BsFillInboxFill />
-            Recibidos
+          <a className="flex items-center space-x-2 p-2">
+            <BsFillInboxFill className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Recibidos</span>
           </a>
         </li>
         <li>
-          <a>
-            <RiInboxUnarchiveFill />
-            Enviados
+          <a className="flex items-center space-x-2 p-2">
+            <RiInboxUnarchiveFill className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Enviados</span>
           </a>
         </li>
         <li>
-          <a>
-            <FaStar />
-            Destacados
+          <a className="flex items-center space-x-2 p-2">
+            <FaStar className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Destacados</span>
           </a>
         </li>
         <li>
-          <a>
-            <MdLabelImportant />
-            Importantes
+          <a className="flex items-center space-x-2 p-2">
+            <MdLabelImportant className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Importantes</span>
           </a>
         </li>
         <li>
-          <a>
-            <MdWatchLater />
-            Pospuestos
+          <a className="flex items-center space-x-2 p-2">
+            <MdWatchLater className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Pospuestos</span>
           </a>
         </li>
         <li>
-          <a>
-            <IoMailSharp />
-            Todos
+          <a className="flex items-center space-x-2 p-2">
+            <IoMailSharp className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Todos</span>
           </a>
         </li>
         <li>
-          <a>
-            <RiDeleteBin5Fill />
-            Papelera
+          <a className="flex items-center space-x-2 p-2">
+            <RiDeleteBin5Fill className="text-lg" />
+            <span className="hidden group-hover:inline ml-2">Papelera</span>
           </a>
         </li>
         <li>
-          <details open>
-            <summary>
-              <IoSettingsSharp />
-              Ajustes
+          <details>
+            <summary className="flex items-center space-x-2 cursor-pointer p-2">
+              <IoSettingsSharp className="text-lg" />
+              <span className="hidden group-hover:inline ml-2">Ajustes</span>
             </summary>
-            <ul>
+            <ul className="pl-4">
               <li>
-                <details open>
-                  <summary>
-                    <IoFolderSharp />
-                    Catalogos
+                <details>
+                  <summary className="flex items-center space-x-2 cursor-pointer p-2">
+                    <IoFolderSharp className="text-lg" />
+                    <span className="hidden group-hover:inline ml-2">Catalogos</span>
                   </summary>
-                  <ul>
+                  <ul className="pl-4">
                     <li>
-                      <a>Usuarios</a>
+                      <a className="text-sm">Usuarios</a>
                     </li>
                     <li>
-                      <a>Planteles</a>
+                      <a className="text-sm">Planteles</a>
                     </li>
                   </ul>
                 </details>
@@ -101,8 +101,8 @@ const MainMenu = () => {
         </li>
       </ul>
 
-      {/* Modal */}
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+      {/* Aquí aseguramos que el modal se renderice solo cuando el estado isModalOpen es verdadero */}
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={closeModal} />}
     </>
   );
 };
