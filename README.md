@@ -1,3 +1,7 @@
+Hola Sensei buenas tardes, subo mi proyecto aun no terminado, pero ya tengo la Interfaz, la Base en Postgresql, la API con mi CRUD, bueno no tengo el UPDATE aun.
+El lunes ya tendre mas cosas para poder mostrarle, saludos
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
