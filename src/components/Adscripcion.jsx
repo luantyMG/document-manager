@@ -1,14 +1,25 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 const Adscripcion = () => {
-
-  import { useState, useEffect, useRef } from "react";
+  const [Adscripcion, setAdscripcion] = useState([]);
 
   useEffect(() => {
-  const fea
-   
-  }, [])
-  
+    const fetchAdscripcion = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/adscripcion/");
+        if (!response.ok) {
+          throw new Error("Error al obtener las adscripciones");
+        }
+        const data = await response.json();
+        setAdscripcion(data);
+      } catch (error) {
+        console.error("Error al obtener las adscripciones:", error);
+      }
+      fetchAdscripcion();
+    };
+  }, []);
+
   return (
     <div className="contenedor-full">
       {/* Contenedor de botones alineados a la izquierda */}
