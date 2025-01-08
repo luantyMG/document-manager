@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image"; // Importa el componente Image de Next.js
+import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import logo from "src/assets/img/logo.png"; // Importa la imagen correctamente
 
@@ -51,7 +51,11 @@ const Tareas = () => {
   return (
     <div className="container mx-auto px-4 py-2">
       {loading ? (
-        <div>Loading...</div>
+        // Spinner de DaisyUI
+        <div className="flex justify-center items-center space-x-2">
+          <div className="w-16 h-16 border-4 border-t-4 border-gray-300 rounded-full animate-spin border-t-blue-500"></div>
+          <span className="text-gray-500">Cargando...</span>
+        </div>
       ) : error ? (
         <div className="text-red-500">{error}</div>
       ) : tareas.length === 0 ? (
