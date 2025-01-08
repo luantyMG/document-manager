@@ -1,5 +1,5 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { FaPen } from "react-icons/fa"; // Importamos el ícono de lápiz desde React Icons
 
 const Adscripcion = () => {
   const [Adscripcion, setAdscripcion] = useState([]);
@@ -16,8 +16,8 @@ const Adscripcion = () => {
       } catch (error) {
         console.error("Error al obtener las adscripciones:", error);
       }
-      fetchAdscripcion();
     };
+    fetchAdscripcion();
   }, []);
 
   return (
@@ -58,50 +58,32 @@ const Adscripcion = () => {
               <th>Clave</th>
               <th>Nombre de la Adscripción</th>
               <th>CTT</th>
-              <th>Municipio</th>{" "}
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
+              <th>Municipio</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            <tr>
-              <td>
-                <div className="flex items-center gap-3">
-                  <div className="avatar">
-                    <div className="mask mask-squircle h-12 w-12">
-                      <img
-                        src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
+            {/* Aquí mapeas las adscripciones */}
+            {Adscripcion.map((item, index) => (
+              <tr key={index}>
+                <td>{item.clave}</td>
+                <td>{item.nombre}</td>
+                <td>{item.ctt}</td>
+                <td>{item.municipio}</td>
+                <td>
+                  <div className="flex items-center gap-3">
+                    {/* Icono de editar (lápiz) */}
+                    <button className="text-blue-500 hover:text-blue-700">
+                      <FaPen className="w-5 h-5" />
+                    </button>
+                    {/* Checkbox */}
+                    <label>
+                      <input type="checkbox" className="checkbox" />
+                    </label>
                   </div>
-                  <div>
-                    <div className="font-bold">Hart Hagerty</div>
-                    <div className="text-sm opacity-50">United States</div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">
-                  Desktop Support Technician
-                </span>
-              </td>
-              <td>Purple</td>
-              <th>
-                <button className="btn btn-ghost btn-xs">details</button>
-              </th>
-              <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
-              </th>
-            </tr>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
